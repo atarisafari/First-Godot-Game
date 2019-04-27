@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="Gradient" id=1]
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 2044
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.909804, 0.207843, 0.392157, 1 )
+albedo_texture = SubResource( 2 )
+
+[sub_resource type="CapsuleMesh" id=4]
+material = SubResource( 3 )
+
+[sub_resource type="CapsuleShape" id=5]
+
+[node name="Player" type="KinematicBody"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 5 )
+
