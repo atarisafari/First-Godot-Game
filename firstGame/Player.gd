@@ -3,7 +3,7 @@ extends KinematicBody
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var speed = 500
+var speed = 600
 var direction = Vector3()
 var gravity = -9.8
 var velocity = Vector3()
@@ -29,6 +29,11 @@ func _physics_process(delta):
 		direction.x -= 1
 	direction = direction.normalized()
 	direction = direction * speed * delta
+	
+	if velocity.y > 0:
+		gravity = -20
+	else:
+		gravity = -30
 	
 	velocity.y += gravity * delta
 	velocity.x = direction.x
