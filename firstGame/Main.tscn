@@ -35,14 +35,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.983, 16.6637, -2.84955 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6264, 19.7282, -3.20879 )
 
 [node name="StartPlatform" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.249, 12.7596, 0.00939703 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2841, 12.7596, 0.0138135 )
 
 [node name="Ramp" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.924701, -0.336564, 0, 0.336564, 0.924701, 0, 0, 0, 1.03387, 19.5527, 7.40475, -1.59984 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 45.6015, 16.9842, -1.39279 )
+transform = Transform( -0.0221122, 0.999756, -4.37007e-008, 0, -4.37114e-008, -1, -0.999756, -0.0221122, 9.66557e-010, 45.7763, 16.224, -1.42316 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.0807237, -0.731351, 0.677207, 0.0865649, 0.682001, 0.72621, -0.99297, -7.39821e-009, 0.118363, 50.8547, 28.2385, 0.677842 )
+[node name="Camera" type="Camera" parent="Player"]
+transform = Transform( 0.990942, 0.0161718, -0.133309, 0.102661, -0.731172, 0.674424, -0.0865649, -0.682001, -0.72621, 1.13277, 5.11119, -11.9675 )
 

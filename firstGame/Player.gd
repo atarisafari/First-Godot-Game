@@ -3,8 +3,10 @@ extends KinematicBody
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var speed = 200
+var speed = 500
 var direction = Vector3()
+var gravity = -9.8
+var velocity = Vector3()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -27,4 +29,10 @@ func _physics_process(delta):
 		direction.x -= 1
 	direction = direction.normalized()
 	direction = direction * speed * delta
-	move_and_slide(direction, Vector3(0, 1, 0))
+	
+	velocity.y += gravity * delta
+	velocity.x = direction.x
+	velocity.z = direction.z
+	
+	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
+	
