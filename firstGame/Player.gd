@@ -42,4 +42,4 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
 	
 	if is_on_floor() and Input.is_key_pressed(KEY_SPACE):
-		velocity.y = 10
+		velocity.y = 12
