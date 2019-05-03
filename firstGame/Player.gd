@@ -1,8 +1,5 @@
 extends KinematicBody
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var speed = 600
 var direction = Vector3()
 var gravity = -9.8
@@ -43,3 +40,11 @@ func _physics_process(delta):
 	
 	if is_on_floor() and Input.is_key_pressed(KEY_SPACE):
 		velocity.y = 12
+	
+	#Stores many collisions have happened since the last call to move_and_slide	
+	var hitCount = get_slide_count()
+	if hitCount > 0:
+		var collision = get_slide_collision(0) #Returns a kinematic collision
+		if collision.collider is RigidBody: #If colliding with the player
+			collision.collider.apply_impulse(collision.position, -collision.normal) 
+	

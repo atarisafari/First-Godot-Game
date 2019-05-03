@@ -4,11 +4,12 @@
 [ext_resource path="res://Walls.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GoalPiece.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Ball.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Area.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Area.gd" type="Script" id=7]
-[ext_resource path="res://Ramp.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Area.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Area.gd" type="Script" id=6]
+[ext_resource path="res://Ramp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=8]
+
+[sub_resource type="BoxShape" id=1]
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
@@ -28,23 +29,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.76705, -2.30063, -2.52529 )
 [node name="GoalPiece" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0058, -0.252362, -4.22478 )
 
+[node name="Target" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.136869, 10.9674, -0.294802 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Target"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1547, -13.8755, -4.98915 )
+shape = SubResource( 1 )
+
 [node name="EndPlatform" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.136869, -0.211909, -0.294802 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.220829, -0.273583, -0.255018 )
 
-[node name="Ball" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.983, 16.6637, -2.84955 )
-
-[node name="Cube" parent="." instance=ExtResource( 6 )]
+[node name="Cube" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4467, 17.0305, -7.8562 )
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
 [node name="StartPlatform" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2841, 12.7596, 0.0138135 )
 
-[node name="Ramp" parent="." instance=ExtResource( 8 )]
+[node name="Ramp" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.924701, -0.336564, 0, 0.336564, 0.924701, 0, 0, 0, 1.03387, 19.5527, 7.40475, -1.59984 )
 
-[node name="Player" parent="." instance=ExtResource( 9 )]
+[node name="Player" parent="." instance=ExtResource( 8 )]
 transform = Transform( -0.0221122, 0.999756, -4.37007e-008, 0, -4.37114e-008, -1, -0.999756, -0.0221122, 9.66557e-010, 45.7765, 16.224, -1.38995 )
 
 [node name="Camera" type="Camera" parent="Player"]

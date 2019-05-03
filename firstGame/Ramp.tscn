@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Metal07_col.jpg" type="Texture" id=1]
 
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 1 )
 
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
@@ -20,4 +23,3 @@ material/0 = SubResource( 2 )
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
 transform = Transform( 0.983654, 0, 0, 0, 0.983654, 0, 0, 0, 0.983654, 0, 0, 0 )
 shape = SubResource( 3 )
-
